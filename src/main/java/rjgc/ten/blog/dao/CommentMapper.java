@@ -4,11 +4,13 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+
 import rjgc.ten.blog.model.domain.Comment;
 
 import java.util.List;
 
 @Mapper
+
 public interface CommentMapper {
 //@Select("select * from t_comment")
 //    public List<Comment> queryComment();
