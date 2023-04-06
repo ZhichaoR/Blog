@@ -13,6 +13,41 @@ public class Article {
     private String tags;
     private Integer allowComment;
     private String thumbnail;
+    private int hits;
+    private int commentsNum;
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", created=" + created +
+                ", modified=" + modified +
+                ", categories='" + categories + '\'' +
+                ", tags='" + tags + '\'' +
+                ", allowComment=" + allowComment +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", hits=" + hits +
+                ", commentsNum=" + commentsNum +
+                '}';
+    }
+
+    public int getHits() {
+        return hits;
+    }
+
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
+
+    public int getCommentsNum() {
+        return commentsNum;
+    }
+
+    public void setCommentsNum(int commentsNum) {
+        this.commentsNum = commentsNum;
+    }
 
     public int getId() {
         return id;
@@ -86,18 +121,4 @@ public class Article {
         this.thumbnail = thumbnail;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", created=" + created +
-                ", modified=" + modified +
-                ", categories='" + categories + '\'' +
-                ", tags='" + tags + '\'' +
-                ", allowComment=" + allowComment +
-                ", thumbnail='" + thumbnail + '\'' +
-                '}';
-    }
 }
