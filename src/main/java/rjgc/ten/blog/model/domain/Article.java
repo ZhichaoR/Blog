@@ -11,7 +11,7 @@ public class Article {
     private Date modified;
     private String categories;
     private String tags;
-    private Integer allowComment;
+    private Boolean allowComment;
     private String thumbnail;
     private int hits;
     private int commentsNum;
@@ -105,11 +105,11 @@ public class Article {
         this.tags = tags;
     }
 
-    public Integer getAllowComment() {
+    public boolean getAllowComment() {
         return allowComment;
     }
 
-    public void setAllowComment(Integer allowComment) {
+    public void setAllowComment(Boolean allowComment) {
         this.allowComment = allowComment;
     }
 
