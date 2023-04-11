@@ -32,8 +32,9 @@ public class CommentServiceImpl implements ICommentService {
     // 郭子昀：用户发表评论
     @Override
     public void pushComment(Comment comment){
+        //评论数据发布
         commentMapper.pushComment(comment);
-        // 更新文章评论数据量
+        // 更新文章评论数据量（调用统计类接口文件staticMapper的相关方法对文章评论信息数量进行统计更新）
         Statistic statistic = statisticMapper.selectStatisticWithArticleId(comment.getArticleId());
         statistic.setCommentsNum(statistic.getCommentsNum()+1);
         statisticMapper.updateArticleCommentsWithId(statistic);

@@ -19,7 +19,7 @@ import rjgc.ten.blog.utils.MyUtils;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-
+//发布评论的请求处理层的实现
 //郭子昀：评论控制类
 @Controller
 @RequestMapping("/comments")
@@ -55,3 +55,5 @@ public class CommentController {
         }
     }
 }
+//publishComment()方法用于实现发布评论，处理路径为"/comments/publish"的请求。
+//如果用户发布评论，首先会获取并封装用户的评论信息，然后将评论信息插入数据库，最后根据数据库操作结果提示用户是否成功发布评论
