@@ -1,7 +1,7 @@
 package rjgc.ten.blog.model.domain;
 
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Article {
     private int id;

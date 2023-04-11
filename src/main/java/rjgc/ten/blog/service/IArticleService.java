@@ -14,6 +14,7 @@ public interface IArticleService {
     //统计热度前十的文章信息
     public List<Article> getHeatArticles();
 
-
+//秦兴旺：发布文章
+    public void publish(Article article);
 
 }

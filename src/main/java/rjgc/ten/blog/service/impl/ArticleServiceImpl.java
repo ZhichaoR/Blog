@@ -2,6 +2,7 @@ package rjgc.ten.blog.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.vdurmont.emoji.EmojiParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import rjgc.ten.blog.model.domain.Statistic;
 import rjgc.ten.blog.service.IArticleService;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -56,9 +58,21 @@ public class ArticleServiceImpl implements IArticleService {
             }
             return articlelist;
         }
-
-
         return null;
+    }
+
+
+//秦兴旺：发布文章
+    @Override
+    public void publish(Article article) {
+        // 去除表情
+        article.setContent(EmojiParser.parseToAliases(article.getContent()));
+        article.setCreated(new Date());
+        article.setHits(0);
+        article.setCommentsNum(0);
+        // 插入文章，同时插入文章统计数据
+        articleMapper.publishArticle(article);
+        statisticMapper.addStatistic(article);
     }
 
 
