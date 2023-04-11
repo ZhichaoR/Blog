@@ -1,13 +1,12 @@
 server:
-  port: 80
+  port: 8080
 spring:
   profiles:
-    active: jdbc
+    active: jdbc,redis
   thymeleaf:
     cache: false
   messages:
     basename: i18n.login
-
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
