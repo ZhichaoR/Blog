@@ -54,13 +54,13 @@ public class IndexController {
         }
     }
 
-    // 博客首页，会自动跳转到文章页
+    // 秦兴旺:博客首页，会自动跳转到文章页
     @GetMapping(value = "/")
     private String index(HttpServletRequest request) {
         return this.index(request, 1, 5);
     }
 
-    // 文章页
+    // 秦兴旺：文章页
     @GetMapping(value = "/page/{p}")
     public String index(HttpServletRequest request, @PathVariable("p") int page, @RequestParam(value = "count", defaultValue = "5") int count) {
         PageInfo<Article> articles = articleServiceImpl.selectArticleWithPage(page, count);
