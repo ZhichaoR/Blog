@@ -2,7 +2,7 @@ package rjgc.ten.blog.model.domain;
 
 
 import java.util.Date;
-
+//任智超
 public class Comment {
 private int id;
 private int articleId;

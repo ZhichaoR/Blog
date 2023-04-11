@@ -40,7 +40,7 @@ public class AdminController {
 //        向request存储数据
         request.setAttribute("comments",comments);
         request.setAttribute("articles",articles);
-        request.setAttribute("statisticBo",statisticBo);
+        request.setAttribute("statistics",statisticBo);
         return "back/index";
     }
     //秦兴旺： 向文章发表页面跳转

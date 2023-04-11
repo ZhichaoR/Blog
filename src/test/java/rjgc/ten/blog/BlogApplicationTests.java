@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import rjgc.ten.blog.dao.ArticleMapper;
 import rjgc.ten.blog.dao.CommentMapper;
 import rjgc.ten.blog.model.ResponseDate.StatisticBo;
@@ -28,7 +29,12 @@ class BlogApplicationTests {
     private ArticleMapper articleMapper;
     @Autowired
     private CommentServiceImpl commentService;
-
+@Test
+public void encodeTest(){
+    BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
+    String password=passwordEncoder.encode("12345678");
+    System.out.println(password);
+}
     //测试CommentServiceImpl当中的getComments方法，并且打印输出
     @Test
     public void getCommentsTest() {
