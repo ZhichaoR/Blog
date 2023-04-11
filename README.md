@@ -8,7 +8,8 @@
 * 查看效果
 ### 文章详情查看（5）——任智超
 * 数据访问层实现  
-编写Comment实体类
+编写Comment实体类  
+处理Commons工具类
 编写CommentMapper类里面的selectCommentWithPage、selectNewComment、pushComment、countComment、deleteCommentWithId
 * 业务处理层实现  
 编写ICommentService和ISiteService  
