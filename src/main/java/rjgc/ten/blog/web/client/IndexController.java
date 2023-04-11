@@ -54,15 +54,15 @@ public class IndexController {
         }
     }
 
-    // 博客首页，会自动跳转到文章页
+    // 秦兴旺:博客首页，会自动跳转到文章页
     @GetMapping(value = "/")
     private String index(HttpServletRequest request) {
-        return this.index(request, 1, 5);
+        return this.index(request, 5, 3);
     }
 
-    // 文章页
+    // 秦兴旺：文章页
     @GetMapping(value = "/page/{p}")
-    public String index(HttpServletRequest request, @PathVariable("p") int page, @RequestParam(value = "count", defaultValue = "5") int count) {
+    public String index(HttpServletRequest request, @PathVariable("p") int page, @RequestParam(value = "count", defaultValue = "3") int count) {
         PageInfo<Article> articles = articleServiceImpl.selectArticleWithPage(page, count);
         // 获取文章热度统计信息
         List<Article> articleList = articleServiceImpl.getHeatArticles();

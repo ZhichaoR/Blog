@@ -25,7 +25,7 @@ public class ArticleServiceImpl implements IArticleService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    //分页查询文章列表
+    //秦兴旺:分页查询文章列表
     @Override
     public PageInfo<Article> selectArticleWithPage(Integer page, Integer count) {
         PageHelper.startPage(page, count);
@@ -40,7 +40,7 @@ public class ArticleServiceImpl implements IArticleService {
         return pageInfo;
     }
 
-    //统计热度前十的文章信息
+    //秦兴旺:统计热度前十的文章信息
     @Override
     public List<Article> getHeatArticles() {
 
