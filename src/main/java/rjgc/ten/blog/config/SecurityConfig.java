@@ -49,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/back/**","/assets/**","/user/**","/article_img/**").permitAll()
                 .antMatchers("/admin/**").hasRole("admin")
                 .anyRequest().authenticated();
+        //authenticated()用于指定其他未声明的请求访问，必须经过授权认证才可以访问
         // 2、自定义用户登录控制
         http.formLogin()
                 .loginPage("/login")
@@ -109,7 +110,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * @throws Exception
      */
 
-    //重写自定义用户认证方法，连接数据库后只需要输入数据库中已有的用户信息就可以登录
+    //重写自定义用户认证方法，连接数据库后只需要输入数据库中已有的用户信息就可以登录认证
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //  密码需要设置编码器
