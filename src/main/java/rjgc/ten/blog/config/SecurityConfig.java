@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Collection;
 
+//郭子昀：Security认证授权配置类
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
@@ -107,6 +108,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * @param auth
      * @throws Exception
      */
+
+    //重写自定义用户认证方法，连接数据库后只需要输入数据库中已有的用户信息就可以登录
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //  密码需要设置编码器
