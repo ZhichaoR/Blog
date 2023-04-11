@@ -2,17 +2,25 @@
 ## 前台管理模块
 ### 文章分页展示（4）——秦兴旺
 * 数据访问层实现
-（已经完成）
 * 业务处理层实现
 * 请求处理层实现
 * 实现前端页面的功能
 * 查看效果
 ### 文章详情查看（5）——任智超
-* 数据访问层实现
-* 业务处理层实现
-* 请求处理层实现
-* 实现前端页面的功能
-* Redis服务启动与配置
+* 数据访问层实现  
+编写Comment实体类
+编写CommentMapper类里面的selectCommentWithPage、selectNewComment、pushComment、countComment、deleteCommentWithId
+* 业务处理层实现  
+编写ICommentService和ISiteService  
+在ArticleServiceImpl里面写了selectArticleWithId方法  
+在CommentServiceImpl里面写了getComments方法  
+在SiteServiceImpl里面写了recentComments、recentArticles、getStatistics、updateStatistics
+* 请求处理层实现  
+编写IndexController里面的getArticleById和getArticleComments
+* 实现前端页面的功能  
+articleDetails.html
+* Redis服务启动与配置  
+编写RedisConfig类实现Redis缓存管理
 * 查看效果
 ### 文章评论管理（3）——郭子昀
 * 业务处理层实现
