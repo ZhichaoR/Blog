@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -17,6 +16,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
+//任智超：参考课本第六章对于Redis的配置
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
 
