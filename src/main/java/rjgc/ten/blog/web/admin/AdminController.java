@@ -73,4 +73,17 @@ public class AdminController {
         request.setAttribute("articles", pageInfo);
         return "back/article_list";
     }
+//    秦兴旺：删除文章
+    @PostMapping(value = "/article/delete")
+    @ResponseBody
+    public ArticleResponseData delete(@RequestParam int id){
+        try{
+            articleServiceImpl.deleteArticleWithId(id);
+            logger.info("文章删除成功");
+            return ArticleResponseData.ok();
+        }catch (Exception e){
+            logger.error("文章删除失败，错误信息："+e.getMessage());
+            return ArticleResponseData.fail();
+        }
+    }
 }

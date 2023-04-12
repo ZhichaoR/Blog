@@ -16,5 +16,6 @@ public interface IArticleService {
 
 //秦兴旺：发布文章
     public void publish(Article article);
-
+//秦兴旺：文章删除
+    public void deleteArticleWithId(int id);
 }

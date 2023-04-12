@@ -2,9 +2,16 @@
 ## 前台管理模块
 ### 文章分页展示（4）——秦兴旺
 * 数据访问层实现
+编写了Article Statistic实体类
+编写了ArticleMapper 和StatisticMapper接口的全部功能
+处理了MyUtils工具类
 * 业务处理层实现
+编写了IArticleService中的分页查询文章列表方法selectArticleWithPage和热度排名方法getHeatArticle();
+实现类实现了这些方法
 * 请求处理层实现
+编写了IndexController中的index方法
 * 实现前端页面的功能
+* 实现了自定义Interceptor拦截器
 * 查看效果
 ### 文章详情查看（5）——任智超
 * 数据访问层实现  

@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rjgc.ten.blog.dao.ArticleMapper;
+import rjgc.ten.blog.dao.CommentMapper;
 import rjgc.ten.blog.dao.StatisticMapper;
 import rjgc.ten.blog.model.domain.Article;
 import rjgc.ten.blog.model.domain.Statistic;
@@ -26,7 +27,8 @@ public class ArticleServiceImpl implements IArticleService {
     private StatisticMapper statisticMapper;
     @Autowired
     private RedisTemplate redisTemplate;
-
+@Autowired
+private CommentMapper commentMapper;
     //秦兴旺:分页查询文章列表
     @Override
     public PageInfo<Article> selectArticleWithPage(Integer page, Integer count) {
@@ -73,6 +75,14 @@ public class ArticleServiceImpl implements IArticleService {
         // 插入文章，同时插入文章统计数据
         articleMapper.publishArticle(article);
         statisticMapper.addStatistic(article);
+    }
+//秦兴旺：删除文章
+    @Override
+    public void deleteArticleWithId(int id) {
+        articleMapper.deleteArticleWithId(id);
+        redisTemplate.delete("article_"+id);
+        statisticMapper.deleteStatisticWithId(id);
+        commentMapper.deleteCommentWithId(id);
     }
 
 
