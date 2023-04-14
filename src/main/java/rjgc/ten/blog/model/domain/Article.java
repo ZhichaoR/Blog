@@ -4,17 +4,18 @@ package rjgc.ten.blog.model.domain;
 import java.util.Date;
 
 public class Article {
-    private int id;
-    private String title;
-    private String content;
-    private Date created;
-    private Date modified;
-    private String categories;
-    private String tags;
-    private Boolean allowComment;
-    private String thumbnail;
-    private int hits;
-    private int commentsNum;
+    private Integer id;          // 文章id
+    private String title;       // 文章标题
+    private String content;     // 文章内容
+    private Date created;       // 文章创建时间
+    private Date modified;      // 文章创建时间
+    private String categories; // 文章分类
+    private String tags;        // 文章标签
+    private Boolean allowComment; // 是否允许评论，默认为true
+    private String thumbnail;     // 文章缩略图
+
+    private Integer hits;       // 点击量
+    private Integer commentsNum;  // 评论总量
 
     @Override
     public String toString() {
@@ -33,27 +34,11 @@ public class Article {
                 '}';
     }
 
-    public int getHits() {
-        return hits;
-    }
-
-    public void setHits(int hits) {
-        this.hits = hits;
-    }
-
-    public int getCommentsNum() {
-        return commentsNum;
-    }
-
-    public void setCommentsNum(int commentsNum) {
-        this.commentsNum = commentsNum;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -105,7 +90,7 @@ public class Article {
         this.tags = tags;
     }
 
-    public boolean getAllowComment() {
+    public Boolean getAllowComment() {
         return allowComment;
     }
 
@@ -121,4 +106,19 @@ public class Article {
         this.thumbnail = thumbnail;
     }
 
+    public Integer getHits() {
+        return hits;
+    }
+
+    public void setHits(Integer hits) {
+        this.hits = hits;
+    }
+
+    public Integer getCommentsNum() {
+        return commentsNum;
+    }
+
+    public void setCommentsNum(Integer commentsNum) {
+        this.commentsNum = commentsNum;
+    }
 }
