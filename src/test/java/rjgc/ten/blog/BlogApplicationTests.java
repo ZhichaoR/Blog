@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import rjgc.ten.blog.dao.ArticleMapper;
 import rjgc.ten.blog.dao.CommentMapper;
 import rjgc.ten.blog.model.ResponseDate.StatisticBo;
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 
 import java.util.List;
 
+@EnableScheduling
 @SpringBootTest
 class BlogApplicationTests {
     @Autowired
