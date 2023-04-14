@@ -27,8 +27,9 @@ public class ArticleServiceImpl implements IArticleService {
     private StatisticMapper statisticMapper;
     @Autowired
     private RedisTemplate redisTemplate;
-@Autowired
-private CommentMapper commentMapper;
+    @Autowired
+    private CommentMapper commentMapper;
+
     //秦兴旺:分页查询文章列表
     @Override
     public PageInfo<Article> selectArticleWithPage(Integer page, Integer count) {
@@ -64,7 +65,8 @@ private CommentMapper commentMapper;
     }
 
 
-//秦兴旺：发布文章
+
+    //秦兴旺：发布文章
     @Override
     public void publish(Article article) {
         // 去除表情
@@ -76,11 +78,12 @@ private CommentMapper commentMapper;
         articleMapper.publishArticle(article);
         statisticMapper.addStatistic(article);
     }
-//秦兴旺：删除文章
+
+    //秦兴旺：删除文章
     @Override
     public void deleteArticleWithId(int id) {
         articleMapper.deleteArticleWithId(id);
-        redisTemplate.delete("article_"+id);
+        redisTemplate.delete("article_" + id);
         statisticMapper.deleteStatisticWithId(id);
         commentMapper.deleteCommentWithId(id);
     }
@@ -99,5 +102,14 @@ private CommentMapper commentMapper;
             }
         }
         return article;
+    }
+
+    //任智超：文章的更新
+    @Override
+    public void updateArticleWithId(Article article) {
+        article.setModified(new Date());
+        articleMapper.updateArticleWithId(article);
+        redisTemplate.delete("article" + article.getId());
+
     }
 }

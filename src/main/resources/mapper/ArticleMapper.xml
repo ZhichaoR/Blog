@@ -19,9 +19,7 @@
             <if test="categories != null">
                 categories = #{categories},
             </if>
-            <if test="hits != null">
-                hits = #{hits},
-            </if>
+
             <if test="commentsNum != null">
                 comments_num = #{commentsNum},
             </if>
