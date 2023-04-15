@@ -32,8 +32,10 @@ public class IndexController {
     public String getArticleById(@PathVariable("id") Integer id,
                                  HttpServletRequest request) {
         Article article = articleServiceImpl.selectArticleWithId(id);
+
         if (article != null) {
             getArticleComments(request,article);
+            siteServiceImpl.updateStatistics(article);
             request.setAttribute("article",article);
             return "client/articleDetails";
         }else {
