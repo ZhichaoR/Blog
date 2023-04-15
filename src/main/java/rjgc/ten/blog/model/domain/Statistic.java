@@ -1,10 +1,10 @@
 package rjgc.ten.blog.model.domain;
 
 public class Statistic {
-    private int id;
-    private int articleId;
-    private int hits;
-    private int commentsNum;
+    private Integer id;
+    private Integer articleId;   // 评论的文章id
+    private Integer hits;        // 点击量
+    private Integer commentsNum;// 评论总量
 
     public int getId() {
         return id;

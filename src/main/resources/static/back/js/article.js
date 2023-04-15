@@ -97,7 +97,7 @@ function subArticle(status) {
                     then: function () {
                         setTimeout(function () {
                             window.location.href = '/admin/article';
-                        }, 500);
+                        }, 10);
                     }
                 });
             } else {

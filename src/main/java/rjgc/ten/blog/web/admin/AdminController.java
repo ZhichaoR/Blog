@@ -69,6 +69,7 @@ public class AdminController {
     }
 
     //秦兴旺： 向文章发表页面跳转
+    // 向文章发表页面跳转
     @GetMapping(value = "/article/toEditPage")
     public String newArticle() {
         return "back/article_edit";

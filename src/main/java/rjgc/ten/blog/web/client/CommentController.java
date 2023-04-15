@@ -4,6 +4,7 @@ import com.vdurmont.emoji.EmojiParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,7 @@ public class CommentController {
     // 发表评论操作
     @PostMapping(value = "/publish")
     @ResponseBody
+
     public ArticleResponseData publishComment(HttpServletRequest request, @RequestParam Integer aid, @RequestParam String text) {
         // 去除js脚本
         text = MyUtils.cleanXSS(text);
@@ -52,6 +54,7 @@ public class CommentController {
         } catch (Exception e) {
             logger.error("发布评论失败，对应文章id: "+aid +";错误描述: "+e.getMessage());
             return ArticleResponseData.fail();
+
         }
     }
 }

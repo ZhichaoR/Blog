@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.vdurmont.emoji.EmojiParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import rjgc.ten.blog.dao.ArticleMapper;
@@ -68,6 +69,7 @@ public class ArticleServiceImpl implements IArticleService {
 
     //秦兴旺：发布文章
     @Override
+
     public void publish(Article article) {
         // 去除表情
         article.setContent(EmojiParser.parseToAliases(article.getContent()));
