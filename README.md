@@ -37,7 +37,8 @@ articleDetails.html
 * 查看效果
 ## 后台管理模块
 ### 数据展示（2）——任智超
-* 请求处理层实现
+* 请求处理层实现  
+编写AdminController里面的index方法向request域中添加属性（最新博客，评论以及统计数据）。
 * 实现后台前端页面功能
 * 查看效果
 ### 文章发布（3）——秦兴旺
@@ -46,8 +47,11 @@ articleDetails.html
 * 实现前端页面功能
 * 查看效果
 ### 文章修改（2）——任智超
-* 业务处理层实现
-* 请求处理层实现
+* 业务处理层实现  
+在IArticleService中添加updateArticleWithId方法  
+在ArticleServiceImpl中添加updateArticleWithId的实现方法
+* 请求处理层实现  
+在AdminController类中添加editArticle以及modifyArticle
 * 查看效果
 ### 文章删除（3）——秦兴旺
 * 业务处理层实现
