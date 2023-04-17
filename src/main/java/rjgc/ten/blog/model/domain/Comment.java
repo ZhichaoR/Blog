@@ -2,15 +2,16 @@ package rjgc.ten.blog.model.domain;
 
 
 import java.util.Date;
+
 //任智超
 public class Comment {
-private int id;
-private int articleId;
-private Date created;
-private String ip;
-private String content;
-private String status;
-private String author;
+    private Integer id;
+    private Integer articleId;
+    private Date created;
+    private String ip;
+    private String content;
+    private String status;
+    private String author;
 
     @Override
     public String toString() {
