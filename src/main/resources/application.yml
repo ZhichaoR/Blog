@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   profiles:
-    active: jdbc,redis
+    active: jdbc,redis,mail
   thymeleaf:
     cache: false
   messages:

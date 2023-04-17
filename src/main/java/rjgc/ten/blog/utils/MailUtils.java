@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class MailUtils {
     @Autowired(required = false)
     private JavaMailSenderImpl mailSender;
+    //${spring.mail.username}
     @Value("${spring.mail.username}")
     private String mailfrom;
     //用于发送简单邮件
