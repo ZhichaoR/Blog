@@ -43,7 +43,10 @@ articleDetails.html
 * 查看效果
 ### 文章发布（3）——秦兴旺
 * 业务处理层实现
+在IArticleService中编写了Publish方法
+在ArticleService中实现了Publsh()方法
 * 请求处理层实现
+在AdminConller中添加了页面跳转请求的方法，包括跳转到文章发布页面的请求方法、发布文章请求的方法、以及发布成功后跳转到文章管理页面的请求方法。
 * 实现前端页面功能
 * 查看效果
 ### 文章修改（2）——任智超
@@ -55,7 +58,10 @@ articleDetails.html
 * 查看效果
 ### 文章删除（3）——秦兴旺
 * 业务处理层实现
+在IArticleService中添加删除方法deleteArticleWithId
+在ArticleServiceImpl中实现deleteArticleWithI方法
 * 请求处理层实现
+在AdminCntroller中添加文章删除方法delete
 * 实现前端页面功能
 * 查看效果
 ### 用户登录控制（3）——郭子昀
