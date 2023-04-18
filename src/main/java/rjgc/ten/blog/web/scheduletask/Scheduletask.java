@@ -18,7 +18,7 @@ public class Scheduletask {
     @Autowired
     private MailUtils mailUtils;
     //${spring.mail.username}
-    @Value("${spring.mail.username}")
+    @Value("1455322598@qq.com")
     private String mailto;
     //定时邮件发送任务，通过注解指定每月1日中午12点调用邮件发送任务发送邮件
     @Scheduled(cron="0 */1 * * * ?")
