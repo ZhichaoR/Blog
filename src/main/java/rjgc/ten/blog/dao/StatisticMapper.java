@@ -18,7 +18,7 @@ public interface StatisticMapper {
     @Update("UPDATE t_statistic SET hits=#{hits} "
             + "WHERE article_id=#{articleId}")
     public void updateArticleHitWithId(Statistic statistic);
-//通过Id更新带年纪量
+//通过Id更新点击量
     @Update("UPDATE t_statistic SET comments_num=#{commentsNum} " + "WHERE article_id=#{articleId}")
     public void updateArticleCommentsWithId(Statistic statistic);
 //更具id删除统计数据
