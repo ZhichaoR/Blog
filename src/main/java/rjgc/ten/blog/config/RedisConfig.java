@@ -50,7 +50,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         jacksonSeial.setObjectMapper(om);
         // 定制缓存数据序列化方式及时效
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofDays(7))   // 设置缓存有效期为1天
+                .entryTtl(Duration.ofDays(7))   // 设置缓存有效期为7天
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(strSerializer))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jacksonSeial))
                 .disableCachingNullValues();   // 对空数据不进行缓存
