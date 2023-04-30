@@ -30,7 +30,7 @@ class BlogApplicationTests {
     private ArticleMapper articleMapper;
     @Autowired
     private CommentServiceImpl commentService;
-
+//token过期，测试新的令牌能够上传到GitHub
     //测试CommentServiceImpl当中的getComments方法，并且打印输出
     @Test
     public void getCommentsTest() {
